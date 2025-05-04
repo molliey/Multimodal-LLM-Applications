@@ -19,8 +19,8 @@ templates = Jinja2Templates(directory="templates")
 def index(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
-@app.post("/process")
-async def process(file: UploadFile = File(...), slide: UploadFile = File(None)):
+@app.post("/process", response_class=HTMLResponse)
+async def process(request: Request, file: UploadFile = File(...), slide: UploadFile = File(None)):
     os.makedirs("temp", exist_ok=True)
     audio_path = f"temp/{file.filename}"
     with open(audio_path, "wb") as f:
@@ -46,4 +46,8 @@ async def process(file: UploadFile = File(...), slide: UploadFile = File(None)):
         ]
     )
 
-    return {"annotations": response["choices"][0]["message"]["content"]}
+    # result = {"annotations": response["choices"][0]["message"]["content"]}
+    # return templates.TemplateResponse("index.html", {"request": request, "annotations": result})
+
+    result = response.choices[0].message.content
+    return templates.TemplateResponse("index.html", {"request": request, "annotations": result})
