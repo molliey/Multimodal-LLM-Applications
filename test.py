@@ -7,6 +7,6 @@ client = OpenAI(
     api_key=openai_api_key,
     base_url=openai_api_base,
 )
-completion = client.completions.create(model="meta-llama/Llama-3.2-3B-Instruct",
+completion = client.completions.create(model="llava-hf/llava-1.5-7b-hf",
                                       prompt="San Francisco is a")
 print("Completion result:", completion)

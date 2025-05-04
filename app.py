@@ -9,7 +9,7 @@ import openai
 import os
 
 openai.api_key = "EMPTY"
-openai.api_base = "http://local:8000/v1"  # or localhost
+openai.api_base = "http://localhost:8000/v1"  # or localhost
 
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
@@ -29,8 +29,8 @@ async def process(file: UploadFile = File(...), slide: UploadFile = File(None)):
     transcript = transcribe_audio(audio_path)
 
     slide_text = ""
-    if slide:
-        slide_path = f"temp/{slide.filename}"
+    if slide and slide.filename:
+        slide_path = os.path.join("temp", slide.filename)
         with open(slide_path, "wb") as f:
             f.write(await slide.read())
         slide_text = extract_text_from_image(slide_path)
@@ -38,7 +38,7 @@ async def process(file: UploadFile = File(...), slide: UploadFile = File(None)):
     prompt = build_prompt(transcript, slide_text)
 
     response = openai.ChatCompletion.create(
-        model="meta-llama/Meta-Llama-3-8B-Instruct",
+        model="llava-hf/llava-1.5-7b-hf",
         messages=[
             {"role": "system", "content": "You are an AI teaching assistant."},
             {"role": "user", "content": prompt}
