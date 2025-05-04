@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Course Assistant</title>
+</head>
+<body>
+    <h1>Upload Lecture Audio and Slide</h1>
+    <form action="/process" enctype="multipart/form-data" method="post">
+        <label>Lecture Audio (MP3/WAV):</label>
+        <input type="file" name="file" required><br><br>
+
+        <label>Slide Image (optional):</label>
+        <input type="file" name="slide"><br><br>
+
+        <button type="submit">Generate Annotations</button>
+    </form>
+</body>
+</html>
