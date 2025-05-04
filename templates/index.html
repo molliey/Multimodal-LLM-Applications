@@ -68,6 +68,18 @@
       border-radius: 6px;
       white-space: pre-wrap;
     }
+
+    .annotation-box {
+        max-height: 400px;
+        overflow-y: auto;
+        background: #fff;
+        padding: 1rem;
+        border-radius: 6px;
+        border: 1px solid #ddd;
+        font-size: 0.95rem;
+        line-height: 1.4;
+        white-space: pre-wrap;
+        }
   </style>
 </head>
 <body>
@@ -84,11 +96,13 @@
     </form>
 
     {% if annotations %}
-  <div class="output">
-    <h3>📝 Annotations</h3>
-    <pre>{{ annotations | safe }}</pre>
-  </div>
-{% endif %}
+    <div class="output">
+        <h3>📝 Annotations</h3>
+        <div class="annotation-box">
+        <pre>{{ annotations | safe }}</pre>
+        </div>
+    </div>
+    {% endif %}
   </main>
 </body>
 </html>
