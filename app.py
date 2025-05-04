@@ -38,6 +38,7 @@ async def process(file: UploadFile = File(...), slide: UploadFile = File(None)):
     prompt = build_prompt(transcript, slide_text)
 
     response = openai.ChatCompletion.create(
+        # meta-llama/Llama-3.2-3B-Instruct
         model="llava-hf/llava-1.5-7b-hf",
         messages=[
             {"role": "system", "content": "You are an AI teaching assistant."},
