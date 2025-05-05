@@ -89,5 +89,5 @@ pip install -r requirement.txt
 uvicorn app:app --host 0.0.0.0 --port 8080
 ```
 
-Then visit:
- 👉 `http://<your-public-ip>:8080` in your browser.
+Then visit (please make sure that you have inbound rules for port 8080):
+ 👉 `http://<your-cloud-instance-public-ip>:8080` in your browser.
