@@ -3,7 +3,6 @@
 **NYU 25 Spring · CSCI-GA.3033-102 - Learning with Large Language and Vision Models**  
 *Group Project*
 
----
 
 ## 📌 Project Description
 
