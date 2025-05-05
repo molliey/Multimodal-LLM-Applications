@@ -19,7 +19,7 @@ This system combines **speech recognition**, **vision-language modeling**, and a
 
 ## 👥 Contributors
 
-- **Changye Su** [@SUcy6]  
+- **Changyue Su** [@SUcy6]  
 - **Ziyun Cheng** [@Zoey-Cheng]  
 - **Lin Yang** [@molliey]  
 - **Kai Zhong** [@ZhongKai-07]  
