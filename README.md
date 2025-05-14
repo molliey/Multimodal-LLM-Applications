@@ -92,3 +92,8 @@ Please make sure that you have inbound rules for port 8080
 
 Then visit:
  👉 `http://<your-cloud-instance-public-ip>:8080` in your browser.
+
+
+ ## 🎦 Demo
+
+ demo video could be found on: [`https://youtu.be/10-4UdWIcpo`](https://youtu.be/10-4UdWIcpo)
