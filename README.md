@@ -2,6 +2,7 @@
 
 **NYU 25 Spring · CSCI-GA.3033-102 - Learning with Large Language and Vision Models**  
 **Saining Xie**
+
 *Group Project*
 
 ![App Design](./img/pipeline.png)
